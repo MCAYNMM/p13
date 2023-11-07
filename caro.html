@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id = "caro"></p>
+<input type="button" value="change value" onclick="changevalue()">
+    <script>
+        let dem = 0;
+        let banco = document.getElementById('caro');
+        let arr = [];
+        for (let i = 0; i < 5; i++) {
+            arr[i] = ['(.)', '(.)', '(.)', '(.)', '(.)' ]
+        }
+        for (let i = 0; i < 5; i++) {
+            for (let j = 0; j < 5; j++) {
+                banco.innerHTML += arr[i][j] + " &nbsp;";
+            }
+            banco.innerHTML += "<br>";
+        }
+        function changevalue()
+        {
+
+            banco.innerHTML = "";
+            if(dem % 2 ==0)
+            {
+                let x = +prompt("nhập hàng cho x");
+                let y = +prompt("nhập cột cho x");
+                arr[x][y] = "x";
+            }
+            else
+            {
+                let x = +prompt("nhập hàng cho o");
+                let y = +prompt("nhập cột cho o");
+                arr[x][y] = "o";
+
+            }
+            for (let i = 0; i < 5; i++)
+            {
+                for (let j = 0; j < 5; j++) {
+                    banco.innerHTML     += arr[i][j] + " &nbsp;";
+                }
+                banco.innerHTML += "<br>";
+            }
+            for (let i = 0; i < 5; i++)
+            {
+                for (let j = 0; j < 5; j++)
+                {
+                    if (arr[i][j] == 'x' && arr[i + 1][j] == 'x' && arr[i + 2][j] == 'x')
+                    {
+                        alert(" x win")
+                    } else if (arr[i][j] == 'x' && arr[i][j + 1] == 'x' && arr[i][j + 2] == 'x')
+                    {
+                        alert(" x win")
+                    } else if (arr[i][j] == 'x' && arr[i + 1][j + 1] == 'x' && arr[i + 2][j + 2] == 'x')
+                    {
+                        alert(" x win")
+                    }
+                }
+                for (let i = 0; i < 5; i++)
+                {
+                    for (let j = 0; j < 5; j++)
+                    {
+                        if (arr[i][j] == 'o' && arr[i + 1][j] == 'o' && arr[i + 2][j] == 'o') {
+                            alert(" o win")
+                        } else if (arr[i][j] == 'o' && arr[i][j + 1] == 'o' && arr[i][j + 2] == 'o') {
+                            alert(" x win")
+                        } else if (arr[i][j] == 'o' && arr[i + 1][j + 1] == 'o' && arr[i + 2][j + 2] == 'o') {
+                            alert(" x win")
+                        }
+                    }
+                }
+                dem++;
+            }
+        }
+    </script>
+</body>
+</html>

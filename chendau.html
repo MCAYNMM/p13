@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // let num = prompt("nhap so");
+    // let arr = [num[0]];
+    // for (let i = 0; i < num.length; i++) {
+    //     if(num[i] % 2 ==0 && num[i-1] % 2 ==0){
+    //         arr.push("-", num[i])
+    //     }
+    //     else{
+    //         arr.push(num[i]);
+    //     }
+    // }
+    // document.write(arr);
+
+    let str = prompt("nhap chuoi");
+    let upper = str.toUpperCase();
+    let result ='';
+    for (let i = 0; i < str.length; i++) {
+        if(str[i] === upper[i]){
+           result = result.concat(str[i].toLowerCase());
+        }else{
+            result = result.concat(str[i].toUpperCase());
+        }
+    }
+    alert(result);
+</script>
+</body>
+</html>
